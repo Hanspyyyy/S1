@@ -1,1 +1,15 @@
+import { Ubuntu } from '@next/font/google';
 
+const ubuntu = Ubuntu({ subsets: ['cyrillic', 'latin'], weight: '400' });
+const ubuntuBold = Ubuntu({ subsets: ['cyrillic', 'latin'], weight: '700' });
+
+function App() {
+...some code
+  return (
+    <div className={s.content} style={{ color: theme.text }}>
+      <div className={clsx(s.content, isDefault ? ubuntuBold.className : ubuntu.className)}>
+        {!isDefault ? activeTab?.content : tabDefault}
+      </div>
+    </div>
+  )
+}
